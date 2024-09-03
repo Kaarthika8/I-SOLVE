@@ -133,3 +133,38 @@ window.addEventListener('resize', function() {
     adjustButtonStyles();
     adjustTimerSectionStyles();
 });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const isolveText = document.getElementById('isolve-text');
+//     const music = document.getElementById('background-music');
+
+//     isolveText.addEventListener('mouseenter', function() {
+//         music.play();
+//     });
+
+//     isolveText.addEventListener('mouseleave', function() {
+//         music.pause();
+//         music.currentTime = 0;  // Reset to the beginning
+//     });
+// });
+
+// Select the h1 element
+const header = document.getElementById("isolve-header");
+
+// Create an audio element
+const audio = new Audio("music.mp3"); // Replace with the path to your music file
+
+// Add an event listener for the mouseenter event to play the audio
+header.addEventListener("mouseenter", function () {
+  audio.currentTime = 0; // Reset the audio to start from the beginning
+  audio.play().then(() => {
+    console.log("Audio is playing.");
+  }).catch((error) => {
+    console.log("Audio playback failed:", error);
+  });
+});
+
+// Optionally, you can pause the audio when the mouse leaves the h1 area
+header.addEventListener("mouseleave", function () {
+  audio.pause();
+});
