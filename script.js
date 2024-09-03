@@ -84,7 +84,7 @@ function adjustTimerSectionStyles() {
 }
 
 function startCountdown() {
-    const deadline = new Date('2024-08-31T23:59:59').getTime(); // Set your deadline date and time here
+    const deadline = new Date('2024-09-31T23:59:59').getTime(); // Set your deadline date and time here
 
     function updateCountdown() {
         const now = new Date().getTime();
